@@ -58,7 +58,7 @@ static int getChar(void){
     return c;
 }
 
-
+//scans the Token from input and puts it in the Global Token variable
 int scan(token *t){
     int c;
 
@@ -67,6 +67,7 @@ int scan(token *t){
     switch (c)
     {
     case EOF:
+        t->token = T_EOF;
         return 0;
     case '+':
         t->token = T_PLUS;

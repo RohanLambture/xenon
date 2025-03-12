@@ -1,1 +1,1 @@
-# A toy Programming langugae
+# Compiler for a Toy Programming language

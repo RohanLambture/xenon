@@ -1,5 +1,5 @@
-scanner: main.cpp scanner.cpp 
-		g++ -o scanner -g main.cpp scanner.cpp
+parser:expr.cpp interp.cpp main.cpp scanner.cpp tree.cpp
+		g++ -o parser -g expr.cpp interp.cpp main.cpp scanner.cpp tree.cpp
 
 clean:
-		rm -f scanner *.o
+		rm -f parser *.o

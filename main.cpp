@@ -10,7 +10,7 @@
 int Line;
 int PutBack;
 FILE *InFile;
-
+token Token;
 
 // Initialise global variables 
 static void init(){
@@ -19,26 +19,28 @@ static void init(){
 }
 
 // List of tokens 
-std::vector<std::string> tokenStr = {"+","-","*","/","int"};
+// std::vector<std::string> tokenStr = {"+","-","*","/","int"};
 
 
-static void readfile(){
-    //std::cout << "Reading the file " << std::endl;
-    token t;
+// static void readfile(){
+//     //std::cout << "Reading the file " << std::endl;
+//     token t;
 
-    while(scan(&t)){
-        std::cout << "Token Type:" << tokenStr[t.token];
-        if(t.token == T_INT){
-            std::cout << "IntValue :" << t.intValue;
-        }
-        std::cout << '\n';
-    }
-    //std::cout << "End of the reading of the file " << std::endl;
+//     while(scan(&t)){
+//         std::cout << "Token Type:" << tokenStr[t.token];
+//         if(t.token == T_INT){
+//             std::cout << "IntValue :" << t.intValue;
+//         }
+//         std::cout << '\n';
+//     }
+//     //std::cout << "End of the reading of the file " << std::endl;
     
-}
+// }
 
 
 int main(int argc,char *argv[]){
+    ASTnode *n;
+
     if(argc!=2){
         std::cerr << "Wrong Usage!!\n";
         exit(1); 
@@ -51,9 +53,15 @@ int main(int argc,char *argv[]){
     InFile = fopen(argv[1],"r");
     if(!InFile){
         std::cerr << "Unable to open " << argv[1]  <<"\n";
+        exit(1);
     }
 
-    readfile();
+    scan(&Token);
+    n = binaryExpr() ;
+    int calculation = interpretAST(n);
+
+    std::cout << calculation <<" is the answer of the input \n";
+
     fclose(InFile);
     exit(0);
 }
