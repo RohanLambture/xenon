@@ -67,8 +67,9 @@ ASTnode *binaryExpr(int ptp){
        right = binaryExpr(operationPrecedence[tokenType]);// Recursively call the binaryExpr 
        
        left = makeASTNode(arithOperation(tokenType),left,right,0);// Join the left and right tree to make a subtree
-              
-       if(Token.token ==T_EOF ){
+        
+       tokenType = Token.token;
+       if(tokenType == T_EOF ){
            return left;
        }
     }
