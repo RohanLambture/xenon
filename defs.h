@@ -3,7 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 
-
+#pragma once
 
 // Token types
 enum {

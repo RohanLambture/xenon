@@ -1,3 +1,4 @@
+#include "defs.h"
 
 int scan(token *t); 
 ASTnode *makeASTNode(int operation,ASTnode *left,ASTnode *right,int intValue);

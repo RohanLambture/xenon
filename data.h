@@ -1,3 +1,5 @@
+#include <iostream>
+#include "defs.h"
 #pragma once 
 
 extern int Line; // Line number of the opened file
