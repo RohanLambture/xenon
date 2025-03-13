@@ -2,9 +2,6 @@
 #include "data.h"
 #include "decl.h"
 #include <iostream>
-#include <fstream>
-#include <vector>
-#include <string>
 
 
 int Line;
@@ -57,7 +54,7 @@ int main(int argc,char *argv[]){
     }
 
     scan(&Token);
-    n = binaryExpr() ;
+    n = binaryExpr(0);
     int calculation = interpretAST(n);
 
     std::cout << calculation <<" is the answer of the input \n";
