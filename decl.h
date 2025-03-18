@@ -1,4 +1,5 @@
 #include "defs.h"
+#pragma once
 
 int scan(token *t); 
 ASTnode *makeASTNode(int operation,ASTnode *left,ASTnode *right,int intValue);
