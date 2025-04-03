@@ -1,6 +1,8 @@
-#include "defs.h"
-#include "data.h"
-#include "decl.h"
+#include "headers/data.h"
+#include "headers/defs.h"
+#include "headers/scanner.h"
+#include "headers/expr.h"
+#include "headers/interp.h"
 #include <iostream>
 
 
@@ -14,26 +16,6 @@ static void init(){
     Line = 1;
     PutBack = 0;
 }
-
-// List of tokens 
-// std::vector<std::string> tokenStr = {"+","-","*","/","int"};
-
-
-// static void readfile(){
-//     //std::cout << "Reading the file " << std::endl;
-//     token t;
-
-//     while(scan(&t)){
-//         std::cout << "Token Type:" << tokenStr[t.token];
-//         if(t.token == T_INT){
-//             std::cout << "IntValue :" << t.intValue;
-//         }
-//         std::cout << '\n';
-//     }
-//     //std::cout << "End of the reading of the file " << std::endl;
-    
-// }
-
 
 int main(int argc,char *argv[]){
     ASTnode *n;
@@ -58,7 +40,6 @@ int main(int argc,char *argv[]){
     int calculation = interpretAST(n);
 
     std::cout << calculation <<" is the answer of the input \n";
-
     fclose(InFile);
     exit(0);
     

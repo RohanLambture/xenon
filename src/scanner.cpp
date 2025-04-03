@@ -1,6 +1,6 @@
-#include "defs.h"
-#include "data.h"
-#include "decl.h"
+#include "../headers/defs.h"
+#include "../headers/scanner.h"
+#include "../headers/data.h"
 #include <iostream>
 
 // Returns the next character from the input file

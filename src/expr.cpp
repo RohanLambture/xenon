@@ -1,6 +1,8 @@
-#include "defs.h"
-#include "data.h"
-#include "decl.h"
+#include "../headers/defs.h"
+#include "../headers/data.h"
+#include "../headers/tree.h"
+#include "../headers/scanner.h"
+#include "../headers/expr.h"
 #include <iostream>
 #include <vector>
 

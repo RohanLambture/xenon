@@ -1,5 +1,6 @@
-#include "defs.h"
-#include "decl.h"
+// #include "../headers/defs.h"
+// #include "decl.h"
+#include "../headers/tree.h"
 
 
 ASTnode *makeASTNode(int operation,ASTnode *left,ASTnode *right,int intValue){

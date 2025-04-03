@@ -1,6 +1,7 @@
-#include "defs.h"
-#include "data.h"
-#include "decl.h"
+#include "../headers/defs.h"
+#include "../headers/data.h"
+#include "../headers/interp.h"
+
 #include <iostream>
 
 
