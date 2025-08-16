@@ -16,37 +16,37 @@ FILE *OutFile;
 
 // Initialise global variables 
 static void init(){
-    Line = 1;
-    PutBack = 0;
+	Line = 1;
+	PutBack = 0;
 }
 
 int main(int argc,char *argv[]){
-    ASTnode *n;
+	ASTnode *n;
 
-    if(argc!=3){
-        std::cerr << "Wrong Usage!!\n";
-        exit(1); 
-    }
-    init();
+	if(argc!=3){
+		std::cerr << "Wrong Usage!!\n";
+		std::cerr << "./parser inputfile outputfile";
+		exit(1); 
+	}
+	init();
 
 
-    InFile = fopen(argv[1],"r");
-    if(!InFile){
-        std::cerr << "Unable to open " << argv[1]  <<"\n";
-        exit(1);
-    }
-    
-    OutFile = fopen(argv[2],"w");
-    if(!OutFile){
-        std::cerr << "Unable to open " <<argv[2] << "\n";
-    }
+	InFile = fopen(argv[1],"r");
+	if(!InFile){
+		std::cerr << "Unable to open " << argv[1]  <<"\n";
+		exit(1);
+	}
+	
+	OutFile = fopen(argv[2],"w");
+	if(!OutFile){
+		std::cerr << "Unable to open " <<argv[2] << "\n";
+	}
 
-    scan(&Token);
-    n = binaryExpr(0);
-    int calculation = interpretAST(n);
+	scan(&Token);
+	n = binaryExpr(0);
+	int calculation = interpretAST(n);
 
-    std::cout << calculation <<" is the answer of the input \n";
-    fclose(InFile);
-    exit(0);
-    
+	std::cout << calculation <<" is the answer of the input \n";
+	fclose(InFile);
+	exit(0);
 }
